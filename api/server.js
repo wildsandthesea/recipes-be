@@ -5,7 +5,7 @@ const server = express();
 server.use(express.json());
 
 server.get('/', (req, res) => {
-  res.status(200).json({ message: 'Welcome to the Backend 🤘🏼'})
+  res.status(200).json({ message: 'Welcome to the Backend 🤘🏼💀✨'})
 })
 
 module.exports = server;

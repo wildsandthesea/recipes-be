@@ -41,6 +41,8 @@ Add scripts to package.json
 
 Built out index.js and server.js
 
+- run `npm run server`
+
 Built out dbConfig.js file
 
 ## Step 3: Create Migration
