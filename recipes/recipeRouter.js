@@ -39,4 +39,15 @@ router.post('/:id', (req, res) => {
     })
 })
 
+router.delete('/:id', (req, res) => {
+  const { id } = req.params;
+  Recipes.removeRecipe(id)
+    .then(deleted => {
+      res.status(200).json({ message: 'Recipe has been destroyed' })
+    })
+    .catch(error => {
+      res.status(500).json(error)
+    })
+})
+
 module.exports = router;
