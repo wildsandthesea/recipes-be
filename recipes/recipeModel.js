@@ -37,10 +37,12 @@ function getShoppingList(id) {
 }
 
 function getInstructions(id) {
-  return db('recipe_instructions')
-  .select('recipe_instructions.step_number', 'recipe_instructions.instructions')
+  return db('instructions')
+  .select('instructions.step_number', 'instructions.instructions')
   .where({ recipe_id: id });
 }
+
+//line 40 was recipe_instructions and 'recipe_' for all of them
 
 function addRecipe(recipe) {
   return db('recipes')
