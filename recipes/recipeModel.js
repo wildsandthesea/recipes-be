@@ -56,8 +56,8 @@ function addRecipe(recipe) {
 
 function removeRecipe(id) {
   return db('recipes')
-    .where({ id })
-    .del();
+    .where({ id: id })
+    .delete();
 }
 
 function addIngredient(item) {

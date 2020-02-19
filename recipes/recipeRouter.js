@@ -28,9 +28,10 @@ router.get('/:id', (req, res) => {
 })
 
 //adds a new recipe
-router.post('/:id', (req, res) => {
+router.post('/', (req, res) => {
   const { id } = req.params;
-  Recipes.addRecipe(id)
+  let recipeInfo = req.body;
+  Recipes.addRecipe(recipeInfo)
     .then(added => {
       res.status(201).json(added)
     })
