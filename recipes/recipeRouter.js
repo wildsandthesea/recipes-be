@@ -40,6 +40,7 @@ router.post('/', (req, res) => {
     })
 })
 
+//deletes a recipe
 router.delete('/:id', (req, res) => {
   const { id } = req.params;
   Recipes.removeRecipe(id)
@@ -51,4 +52,16 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+//gets instructions for recipe
+
+router.get('/instructions/:id', (req, res) => {
+  const { id } = req.params;
+  Recipes.getInstructions(id)
+    .then(instructions => {
+      res.status(200).json(instructions)
+    })
+    .catch(error => {
+      res.status(500).json({ errorMessage: 'Unable to fetch the instructions' })
+    })
+})
 module.exports = router;
